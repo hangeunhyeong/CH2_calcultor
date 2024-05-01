@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -16,8 +16,11 @@ public class App {
         int secondInt;
         char operator;
         double result = 0;
+
         String endCommand = "exit";
-        String decideEnd;
+        String removeCommand = "remove";
+        String decide;
+
 
         do {
             System.out.println("첫 번째 숫자를 입력하세요: ");
@@ -50,20 +53,25 @@ public class App {
 
             System.out.println("결과: " + result);
             resultList.add(result);
-            lastIndex++;
 
-            if (lastIndex > 10) {
+
+            System.out.println(resultList.toString());
+
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            String buffer;
+            buffer = sc.nextLine();
+            decide = sc.nextLine();
+            if (decide.equals(removeCommand)) {
                 resultList.remove(0);
             }
-
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String buffer;
             buffer = sc.nextLine();
-            decideEnd = sc.nextLine();
+            decide = sc.nextLine();
 
 
-        } while (!decideEnd.equals(endCommand));
+        } while (!decide.equals(endCommand));
 
 
     }
