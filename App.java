@@ -19,6 +19,7 @@ public class App {
 
         String endCommand = "exit";
         String removeCommand = "remove";
+        String inquiryCommand = "inquiry";
         String decide;
 
 
@@ -65,9 +66,15 @@ public class App {
                 resultList.remove(0);
             }
 
+            System.out.println("저장된 연산 결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            decide = sc.nextLine();
+            if (decide.equals(inquiryCommand)) {
+                for (double inquiryResult : resultList) {
+                    System.out.println(inquiryResult);
+                }
+            }
+
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
-            String buffer;
-            buffer = sc.nextLine();
             decide = sc.nextLine();
 
 
